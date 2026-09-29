@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTH Talleres</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f7f7f5,#17191b);--surface:light-dark(#fff,#222528);--surface2:light-dark(#f0f2f3,#2b2f32);--text:light-dark(#202326,#f5f5f2);--muted:light-dark(#697078,#b9bec3);--line:light-dark(#dfe2e4,#3b4044);--red:#e43b35;--orange:#f59b23;--blue:#48a8d8;}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+#app{min-height:100vh;background:var(--bg)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 92%,transparent);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+.logo{font-weight:900;letter-spacing:-.04em;font-size:22px}.logo span{color:var(--red)}
+.navlinks{display:flex;gap:24px;font-size:14px;color:var(--muted)}.navlinks a{color:inherit;text-decoration:none}.navlinks a:hover{color:var(--text)}
+.hero{padding:82px 6vw 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;max-width:1250px;margin:auto;align-items:center}
+.kicker{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px}.hero h1{font-size:clamp(46px,7vw,84px);line-height:.9;letter-spacing:-.07em;margin:0 0 28px;max-width:760px}.hero h1 em{font-style:normal;color:var(--orange)}.hero p{font-size:19px;line-height:1.55;color:var(--muted);max-width:650px;margin:0 0 30px}
+.cta{display:inline-flex;align-items:center;gap:9px;background:var(--text);color:var(--bg);padding:14px 19px;border-radius:999px;text-decoration:none;font-weight:800;font-size:14px}.cta:hover{transform:translateY(-1px)}
+.hero-card{min-height:390px;border-radius:30px;background:linear-gradient(145deg,#e43b35,#f59b23 58%,#48a8d8);padding:28px;display:flex;align-items:flex-end;box-shadow:0 22px 60px rgba(0,0,0,.16)}.hero-card-inner{background:rgba(255,255,255,.94);color:#202326;border-radius:22px;padding:24px;width:100%}.hero-card-inner strong{display:block;font-size:28px;letter-spacing:-.04em;margin-bottom:8px}.hero-card-inner span{font-size:14px;line-height:1.45;color:#697078}
+section{padding:68px 6vw;max-width:1250px;margin:auto}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:30px}.section-head h2{font-size:38px;letter-spacing:-.05em;margin:0}.section-head p{max-width:470px;color:var(--muted);line-height:1.5;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;min-height:330px;display:flex;flex-direction:column;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(0,0,0,.08)}.tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--red);margin-bottom:20px}.card h3{font-size:27px;line-height:1.03;letter-spacing:-.045em;margin:0 0 14px}.card p{color:var(--muted);line-height:1.5;margin:0 0 20px}.card-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.status{font-size:12px;color:var(--muted)}button{border:0;background:var(--surface2);color:var(--text);padding:10px 13px;border-radius:12px;font-weight:800;cursor:pointer}button:hover{background:var(--line)}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;border-top:1px solid var(--line)}.about h2{font-size:38px;letter-spacing:-.05em;margin:0}.about p{font-size:18px;line-height:1.65;color:var(--muted);margin:0 0 16px}.pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.pill{padding:10px 13px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:700}
+.faq{border-top:1px solid var(--line)}.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.faq-box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;min-height:190px}.faq-box h3{font-size:18px;line-height:1.2;margin:0 0 16px}.faq-box p{color:var(--muted);line-height:1.55;margin:0}
+.final{margin:0 6vw 70px;border-radius:28px;padding:45px;background:var(--surface2);display:flex;justify-content:space-between;align-items:center;gap:25px}.final h2{font-size:38px;letter-spacing:-.05em;margin:0 0 8px}.final p{margin:0;color:var(--muted)}
+footer{padding:30px 6vw;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:55px}.grid{grid-template-columns:1fr}.about{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr}.navlinks{display:none}.final{margin-left:4vw;margin-right:4vw;display:block}.final .cta{margin-top:22px}.section-head{display:block}.section-head p{margin-top:12px}}
+</style>
+</head>
+<body>
+<div id="app">
+<nav><div class="logo">RTH <span>TALLERES</span></div><div class="navlinks"><a href="#talleres">Talleres</a><a href="#como">Cómo funciona</a><a href="#faq">Preguntas frecuentes</a></div></nav>
+<main>
+<div class="hero">
+<div><div class="kicker">Aprender cosas que sirven</div><h1>Hay cosas que nadie nos enseñó. <em>Ahora podemos aprenderlas.</em></h1><p>Talleres prácticos, presenciales y en grupos reducidos para ganar herramientas y autonomía en situaciones de la vida real.</p><a class="cta" href="#talleres">VER LOS TALLERES</a><div class="pillrow" style="margin-top:24px"><span class="pill">👥 Máximo 6 personas</span><span class="pill">🛠️ 100% práctico</span><span class="pill">📍 CABA</span><span class="pill">✨ Sin experiencia previa</span></div></div>
+</div>
+<section id="talleres"><div class="section-head"><h2>Los talleres</h2><p>Experiencias prácticas para aprender haciendo, entender mejor tu casa y ganar autonomía en situaciones reales.</p></div>
+<div class="grid">
+<article class="card"><div class="tag">Taller práctico</div><h3>Mecánica básica para mujeres</h3><p>Para entender herramientas, piezas y reparaciones simples, y sentirte más segura frente a situaciones cotidianas.</p><div class="card-bottom"><span class="status">Próximamente</span><button onclick="info('Mecánica básica para mujeres')">Conocer el taller</button></div></article>
+<article class="card"><div class="tag">Taller práctico</div><h3>Mantenimiento básico de la casa</h3><p>Qué revisar, qué prevenir y qué podés resolver antes de que un pequeño problema termine convirtiéndose en una reparación grande.</p><div class="card-bottom"><span class="status">Próximamente</span><button onclick="info('Mantenimiento básico de la casa')">Conocer el taller</button></div></article>
+<article class="card"><div class="tag">Taller práctico</div><h3>Armá tu primera caja de herramientas</h3><p>Qué herramientas necesitás, para qué sirve cada una y cómo armar un equipo útil sin comprar de más.</p><div class="card-bottom"><span class="status">Próximamente</span><button onclick="info('Armá tu primera caja de herramientas')">Conocer el taller</button></div></article>
+</div></section>
+<section id="como" class="about"><div><div class="kicker">Cómo funciona</div><h2>Aprendemos haciendo, en grupos chicos y sin necesidad de experiencia previa.</h2></div><div><p>RTH Talleres nace de algo muy simple: hay un montón de cosas de una casa que parecen complicadas hasta que alguien te las explica de manera clara y te deja probar.</p><p>Por eso cada encuentro está pensado para trabajar sobre herramientas, materiales y situaciones reales. La idea no es que memorices teoría: es que entiendas, practiques y te lleves algo que puedas aplicar.</p><div class="pillrow"><span class="pill">Máximo 6 personas</span><span class="pill">100% práctico</span><span class="pill">CABA</span><span class="pill">Sin experiencia previa</span></div></div></section>
+<section id="faq" class="faq"><div class="section-head"><h2>Preguntas frecuentes</h2><p>Todo lo importante, explicado de manera simple y directa.</p></div><div class="faq-grid"><div class="faq-box"><h3>¿Necesito conocimientos previos?</h3><p>No. La propuesta parte desde lo básico y explica los conceptos necesarios para poder seguir el taller.</p></div><div class="faq-box"><h3>¿Los talleres son presenciales u online?</h3><p>Los talleres son presenciales en CABA y están pensados para aprender haciendo, con grupos reducidos.</p></div><div class="faq-box"><h3>¿Qué recibo al hacer un taller?</h3><p>Vas a tener una experiencia práctica y material de apoyo cuando corresponda. Cada taller va a detallar qué incluye.</p></div></div></section>
+<div class="final"><div><h2>Elegí algo que quieras aprender.</h2><p>Los próximos talleres van a aparecer acá.</p></div><a class="cta" href="#talleres">Explorar talleres</a></div>
+</main>
+<footer><span>RTH Talleres · Repara Tu Hogar</span><span>Una nueva forma de aprender sobre tu casa.</span></footer>
+</div>
+<script>function info(name){alert(name+'\n\nEstamos preparando la ficha completa de este taller. Acá después vamos a poner modalidad, duración, fecha, precio y cómo reservar.');}</script>
+</body></html>
